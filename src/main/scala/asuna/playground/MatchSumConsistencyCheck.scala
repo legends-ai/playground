@@ -32,16 +32,17 @@ object MatchSumConsistencyCheck extends Playground(Seq("alexandria", "vulgate"))
       )
 
       baseSpace = MatchFiltersSpace(
-        championIds = Set(annie),
-        regions = Set(Region.NA),
-        roles = Set(Role.MID),
-        tiers = Set(Tier.GOLD),
+        championIds = Set(annie).toSeq,
+        regions = Set(Region.NA).toSeq,
+        roles = Set(Role.MID).toSeq,
+        tiers = Set(Tier.GOLD).toSeq,
         queues = Set(
           Queue.TEAM_BUILDER_RANKED_SOLO,
           Queue.RANKED_FLEX_SR,
           Queue.RANKED_SOLO_5x5,
           Queue.TEAM_BUILDER_DRAFT_RANKED_5x5,
-        ),
+        ).toSeq,
+        versions = patches,
       )
       base <- alex.getSum(GetSumRequest(space = baseSpace.some))
 
