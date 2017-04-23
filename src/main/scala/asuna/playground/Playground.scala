@@ -20,12 +20,9 @@ abstract class Playground(deps: Seq[String]) {
 
   var svc: BaseService[Unit] = null
 
-  def main(args: Seq[String]): Unit = {
+  def init(args: Seq[String]): Unit = {
     svc = new BaseService(args, cfgParser)
-    run()
   }
-
-  def run(): Unit
 
 }
 

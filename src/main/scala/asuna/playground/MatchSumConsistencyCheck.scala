@@ -12,7 +12,9 @@ import cats.implicits._
 
 object MatchSumConsistencyCheck extends Playground(Seq("alexandria", "vulgate")) {
 
-  def run(): Unit = {
+  def main(args: Array[String]): Unit = {
+    init(args)
+
     val alex = AlexandriaGrpc.stub(svc.clientFor("alexandria"))
     val vulgate = VulgateGrpc.stub(svc.clientFor("vulgate"))
 
