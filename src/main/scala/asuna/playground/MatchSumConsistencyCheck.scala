@@ -46,7 +46,7 @@ object MatchSumConsistencyCheck extends Playground(Seq("alexandria", "vulgate"))
       )
       base <- alex.getSum(GetSumRequest(space = baseSpace.some))
 
-      withEnemiesSpace = baseSpace.update(_.enemyIds := factors.champions)
+      withEnemiesSpace = baseSpace.update(_.enemyIds := (factors.champions :+ 0))
       withEnemies <- alex.getSum(GetSumRequest(space = withEnemiesSpace.some))
 
     } yield {
